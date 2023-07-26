@@ -1,0 +1,58 @@
+<!-- <i class="fa-solid fa-bars" [ngClass]="sidenav ? '{}' : 'hidden'" (click)="toggleSidebar()"></i> -->
+<aside id="sidebar" [ngClass]="sidenav ? ['w-full','md:w-80']:'w-[85px]' " class="bg-white h-screen md:block shadow-xl px-5  md:w-80 lg:w-80 overflow-x-hidden transition-all duration-500 ease fixed z-20">
+    <div class="md:space-y-8 " [ngClass]="sidenav ?  ['space-y-6'] :['space-y-2']">
+        <div class="flex items-center justify-between relative mt-5">
+            <div class=" flex flex-nowrap items-center gap-4">
+                <div class="cursor-pointer flex justify-center" [ngClass]="sidenav ? 'w-[72px]' :'w-16' ">
+                    <img src="/angular/assets/img/logo.jpg" alt="">
+                </div>
+                <h1 class=" text-2xl font-bold transition-all duration-300 ease" [ngClass]="sidenav ? 'opacity-100':'opacity-0 md:opacity-100' " >To-do List</h1>
+            </div>
+            <i (click)="toggleSidebar()" [ngClass]="sidenav ? '': 'opacity-0' " class="fa-solid fa-arrow-left right-3 cursor-pointer text-2xl md:hidden"></i>
+        </div>
+        <div>
+            <i (click)="toggleSidebar()" class="fa-solid fa-arrow-right flex hover:bg-teal-500 hover:text-white py-2 pr-3 rounded-md cursor-pointer transition-all ease duration-300 text-2xl md:hidden" [ngClass]="sidenav ? ['hidden']:['opacity-100','justify-end']" ></i>
+        </div>
+        <div class="flex border-2 border-gray-200 rounded-md ring-teal-500"  [ngClass]="sidenav ? '':'hidden md:flex' ">
+            <input type="text"
+                class="w-full rounded-tl-md rounded-bl-md px-2 py-3 text-sm text-gray-600 focus:outline-none"
+                placeholder="Search" />
+            <button class="rounded-tr-md rounded-br-md px-2 py-3 hidden md:block">
+                <svg class="w-4 h-4 fill-current" fill="currentColor" viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                        clip-rule="evenodd"></path>
+                </svg>
+            </button>
+        </div>
+        <div id="menu" class="flex flex-col space-y-2 mt-0">
+            <a href=""
+                class="flex gap-4 items-center text-sm font-medium text-gray-700 py-2 px-2 hover:bg-teal-500 hover:text-white hover:text-base rounded-md transition duration-150 ease-in-out">
+                <i class="fa-solid fa-chart-pie  text-2xl"></i>
+                <span [ngClass]="sidenav ? '': ['hidden','opacity-0','md:block','md:opacity-100','md:block','md:opacity-100'] " class="">Overview</span>
+            </a>
+            <a [routerLink]="['/']"
+                class="flex gap-4 items-center text-sm font-medium text-gray-700 py-2 px-3 hover:bg-teal-500 hover:text-white hover:scale-105 rounded-md transition duration-150 ease-in-out">
+                <i class="fa-solid fa-list-check  text-2xl"></i>
+                <span [ngClass]="sidenav ? '': ['hidden','opacity-0','md:block','md:opacity-100'] " class="">To-do List</span>
+            </a>
+            <a href=""
+                class="flex gap-4 items-center text-sm font-medium text-gray-700 py-2 px-[10px] hover:bg-teal-500 hover:text-white hover:scale-105 rounded-md transition duration-150 ease-in-out">
+                <i class="fa-solid fa-gear  text-2xl "></i>
+                <span [ngClass]="sidenav ? '': ['hidden','opacity-0','md:block','md:opacity-100'] " class="">Setting</span>
+            </a>
+            <a href=""
+                class="flex gap-4 items-center text-sm font-medium text-gray-700 py-2 px-3 hover:bg-teal-500 hover:text-white hover:scale-105 rounded-md transition duration-150 ease-in-out">
+                <i class="fa-regular fa-calendar  text-2xl"></i>
+                <span [ngClass]="sidenav ? '': ['hidden','opacity-0','md:block','md:opacity-100'] " class="">Calendar</span>
+            </a>
+
+            <a href=""
+                class="flex gap-4 items-center text-sm font-medium text-gray-700 py-2 px-3 hover:bg-teal-500 hover:text-white hover:scale-105 rounded-md transition duration-150 ease-in-out">
+                <i class="fa-solid fa-user  text-2xl"></i>
+                <span [ngClass]="sidenav ? '': ['hidden','opacity-0','md:block','md:opacity-100'] " class="">Users</span>
+            </a>
+        </div>
+    </div>
+</aside>

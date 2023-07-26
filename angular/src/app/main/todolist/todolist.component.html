@@ -1,0 +1,103 @@
+<app-header></app-header>
+<div class="flex flex-col h-full   ml-[85px] md:ml-80 pl-6 pr-8 xl:pr-4 py-2 md:pl-4 md:pr-4 md:py-4 transition-all duration-500 ease over"  >
+    <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8 "> 
+        <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8 mt-[65px]" >
+            <div class=" border border-gray-200 dark:border-gray-700 md:rounded-lg h-[480px]">
+                <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+                    <thead class="bg-gray-50 dark:bg-gray-800">
+                        <tr>
+                            <th scope="col" class="py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                                <button class="flex items-center gap-x-3 focus:outline-none">
+                                    <span>Check</span>
+                                </button>
+                            </th>
+
+                            <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                                Công việc
+                            </th>
+
+                            <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                                Công việc phụ
+                            </th>
+
+                            <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                                Hạn cuối
+                            </th>
+
+                            <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                                Ghi chú
+                            </th>
+
+                            <th scope="col" class="relative py-3.5 px-2">
+                                <span class="">Action</span>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200 dark:divide-gray-700 dark:bg-gray-900">
+                        <tr class="border text-gray-500">
+                            <td class="px-4 py-4 text-sm font-medium whitespace-nowrap">
+                                <div>
+                                    <input type="checkbox">
+                                </div>
+                            </td>
+                            
+                            <td class="px-4 py-4 text-sm whitespace-nowrap">
+                                <div>
+                                    <h4 class=" dark:text-gray-200">Chạy bộ</h4>
+                                    
+                                </div>
+                            </td>
+                            <td class="px-4 py-4 text-sm font-medium whitespace-nowrap">
+                                <div>
+                                    <ul class="text-sm font-light">
+                                        <li>
+                                            Ăn sáng
+                                        </li>
+                                        <li>
+                                            Uống thuốc  
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                            <td class="px-4 py-4 text-sm whitespace-nowrap">
+                               <div>
+                                    <h4 class=" dark:text-gray-200">28/7/2023</h4>
+                               </div>
+                            </td>
+
+                            <td class="px-4 py-4 text-sm whitespace-nowrap">
+                                <div>
+                                    <p class=" dark:text-gray-400">Chạy cho có sức khoẻ</p>
+                                </div>
+                            </td>
+
+                            <td class="px-2 py-4 text-sm whitespace-nowrap flex justify-center relative">
+                                <div (click)="openOption()" class=" px-4 py-2 text-gray-500 transition-colors cursor-pointer duration-200 rounded-lg dark:text-gray-300 hover:bg-gray-100">
+                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                </div>
+                                <div [routerLink]="['/detaillist']" [ngClass]="isOpentOption ? 'block':'hidden' " class="absolute top-full right-10 px-4 py-4 rounded-md bg-white flex gap-2" style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
+                                    <div class="px-4 py-2 bg-blue-500 text-white rounded-md cursor-pointer">
+                                        View
+                                        <i class="fa-solid fa-eye text-white ml-1"></i>
+                                    </div>
+                                    
+                                    <div class="px-4 py-2 bg-red-500 text-white rounded-md cursor-pointer">
+                                        Delete
+                                        <i class="fa-solid fa-trash text-white ml-1"></i>
+                                    </div>
+                                    
+                                </div>
+                            </td>
+                        </tr>
+
+                        
+                    </tbody>
+                </table>
+                
+            </div>
+            <div class="my-5">
+                <app-pagination></app-pagination>
+            </div>
+        </div>
+    </div>
+</div>
